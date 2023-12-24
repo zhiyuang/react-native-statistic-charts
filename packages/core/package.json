@@ -1,0 +1,32 @@
+{
+  "name": "react-native-statistic-charts-core",
+  "version": "0.9.1",
+  "license": "MIT",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "files": [
+    "cjs",
+    "esm"
+  ],
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "build:clean": "rimraf cjs esm",
+    "build:esm": "tsc -p tsconfig.esm.json && tsc-alias -p tsconfig.esm.json",
+    "dev": "concurrently \"tsc -w\" \"tsc-alias -w\"",
+    "prepack": "yarn build:clean && yarn build && yarn build:esm",
+    "publish:local": "yalc publish --push --changed"
+  },
+  "dependencies": {
+    "@antv/scale": "0.4.6",
+    "lodash-es": "4.17.21",
+    "transformation-matrix": "^2.11.1"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.6",
+    "rimraf": "^3.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhiyuang/react-native-statistic-charts"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "react-native-statistic-charts-packages",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn build:core && yarn build:renderer",
+    "build:core": "yarn workspace react-native-statistic-charts-core prepack",
+    "build:renderer": "yarn workspace react-native-statistic-charts prepack",
+    "commit": "git-cz",
+    "postinstall": "husky install",
+    "install:packages": "lerna exec -- yarn install",
+    "lint-staged": "lint-staged",
+    "prepare": "lerna run prepare",
+    "publish": "lerna publish from-package --force-publish --yes",
+    "version": "node ./scripts/version.js",
+    "version:major": "lerna version major --yes",
+    "version:minor": "lerna version minor --yes",
+    "version:patch": "lerna version patch --yes",
+    "version:prerelease": "lerna version prerelease --yes"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && yarn auto_jira"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json}": [
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --max-warnings=0"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhiyuang/react-native-statistic-charts"
+  },
+  "resolutions": {
+    "**/@types/react": "^16.8.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "@umijs/fabric": "^2.8.1",
+    "concurrently": "^7.2.2",
+    "dumi": "^1.1.0",
+    "eslint": "^8.13.0",
+    "father": "^4.0.0-rc.2",
+    "gh-pages": "^3.0.0",
+    "git-cz": "^4.8.0",
+    "husky": "^7.0.4",
+    "lerna": "^4.0.0",
+    "lint-staged": "^12.3.8",
+    "prettier": "^2.6.2",
+    "react": "^18.2.0",
+    "react-native-svg-web": "^1.0.9",
+    "react-native-web": "^0.18.9",
+    "tsc-alias": "^1.6.6",
+    "typescript": "^4.6.3",
+    "yorkie": "^2.0.0"
+  }
+}
