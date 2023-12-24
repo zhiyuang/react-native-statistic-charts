@@ -1,6 +1,6 @@
 {
   "name": "react-native-statistic-charts",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "license": "MIT",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "lodash-es": "4.17.21",
-    "react-native-statistic-charts-core": "0.9.1"
+    "react-native-statistic-charts-core": "0.9.2"
   },
   "devDependencies": {
     "@tsconfig/react-native": "^1.0.4",
