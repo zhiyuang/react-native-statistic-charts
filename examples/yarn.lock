@@ -5594,22 +5594,22 @@ react-native-screens@~3.22.0:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
 
-react-native-statistic-charts-core@0.9.2:
-  version "0.9.2"
-  resolved "https://registry.npmjs.org/react-native-statistic-charts-core/-/react-native-statistic-charts-core-0.9.2.tgz#894529f1ef77409850ab0564d641e0091684e659"
-  integrity sha512-W9fkrZ5FGUgYxtI/E/fyQQyJmuiJFRZubRXYW/Dpz7EkQBKJO4eKS0LqrBnt+hK80UHDsa+ui+01yqMWgPkiQQ==
+react-native-statistic-charts-core@0.9.1:
+  version "0.9.1"
+  resolved "https://registry.npmjs.org/react-native-statistic-charts-core/-/react-native-statistic-charts-core-0.9.1.tgz#80b36192da3bc67cc36cec4ab1c8adee0695df84"
+  integrity sha512-43Cjv84y/AR2pj7MiBRAcbKnGnFD2nHlQpw4zEm2KZhGtqjTAYAqYu34Gcfb1nT3Yz4qrqlYWdB7JD/TZ0UxlQ==
   dependencies:
     "@antv/scale" "0.4.6"
     lodash-es "4.17.21"
     transformation-matrix "^2.11.1"
 
-react-native-statistic-charts@^0.9.2:
-  version "0.9.2"
-  resolved "https://registry.npmjs.org/react-native-statistic-charts/-/react-native-statistic-charts-0.9.2.tgz#4a2861362e06c3a2faa35440fceddc4fbaa2a502"
-  integrity sha512-Umiktur/dHVon571MVllZDh+p3nZUgjf6m0ljJg8Hg6lzX7jTVOkRGWdXttni9TxFJE8Nb4sHYRM/xmKHOq7IQ==
+react-native-statistic-charts@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.npmjs.org/react-native-statistic-charts/-/react-native-statistic-charts-0.9.1.tgz#fc1b588f6bc1aa2b8be9349783d525185ce1245a"
+  integrity sha512-vb2zbseP47J1TVGn5+45aaW0cpFQ6GrwYzGhoIE2U1sL5kHSlcoROtmJGamotpahglLJWi7DYcykeYc5VmDsUw==
   dependencies:
     lodash-es "4.17.21"
-    react-native-statistic-charts-core "0.9.2"
+    react-native-statistic-charts-core "0.9.1"
 
 react-native-svg@13.9.0:
   version "13.9.0"
