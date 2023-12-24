@@ -84,7 +84,7 @@ yarn add react-native-statistic-charts
 ```
 
 
-### Example
+## Quick Start
 ```tsx
 import React from 'react'
 // import chart componennt
@@ -112,6 +112,202 @@ export default () => (
     <Axis field="date" lineStyle={{ strokeColor: '#aaa' }} tickLineStyle={{ strokeColor: '#ccc' }} />
     <Axis field="value" lineStyle={{ strokeWidth: 0 }} tickLineStyle={{ strokeWidth: 0 }} grid />
     <Line position="date*value" size={2} />
+    <Tooltip
+      crosshair
+      crosshairsType="x"
+      crosshairStyle={{ strokeColor: 'orange', strokeWidth: 2, strokeStyle: 'solid' }}
+      sticky
+    />
+  </Chart>
+)
+```
+
+## Examples
+
+### Line Chart
+![](./public/examples/line.png)
+
+```tsx
+import React from 'react'
+import { View, Dimensions } from 'react-native'
+import { Chart, Axis, Tooltip, Line, ScaleType } from 'react-native-statistic-charts'
+
+// const data = { date: sring, value: number }[]
+
+export default () => (
+  <View>
+    <Chart
+      data={data}
+      scale={{
+        date: { type: ScaleType.TimeCategory },
+        value: { type: ScaleType.Linear, tickCount: 6 },
+      }}
+    >
+      <Axis field="date" />
+      <Axis field="value" lineStyle={{ strokeWidth: 0 }} tickLineStyle={{ strokeWidth: 0 }} grid />
+      <Line position="date*value" />
+      <Tooltip
+        crosshair
+        crosshairsType="x"
+        crosshairStyle={{ strokeColor: 'orange', strokeWidth: 2, strokeStyle: 'solid' }}
+        sticky
+      />
+    </Chart>
+  </View>
+)
+```
+
+### Bar Chart
+![](./public/examples/bar.png)
+
+```tsx
+import React from 'react'
+import { View, Dimensions } from 'react-native'
+import { Chart, Axis, Tooltip, Interval, ScaleType } from 'react-native-statistic-charts'
+
+// const data = { date: sring, value: number }[]
+
+export default () => (
+  <View>
+    <Chart
+      data={data}
+    >
+      <Axis field="date" lineStyle={{ strokeColor: '#aaa' }} tickLineStyle={{ strokeWidth: 0 }} tickCount={8} />
+      <Axis
+        field="value"
+        lineStyle={{ strokeWidth: 0 }}
+        tickLineStyle={{ strokeWidth: 0 }}
+        grid
+        gridLineStyle={{ strokeStyle: 'dashed', dashedStyle: [2] }}
+        labelStyle={{ offset: 6 }}
+      />
+      <Interval
+        position="date*value"
+        size={10}
+        groupBy="country"
+        color={{ field: 'value', value: record => (record['value'] > 0 ? 'green' : 'red') }}
+      />
+      <Tooltip
+        crosshair
+        crosshairsType="x"
+        crosshairStyle={{ strokeColor: 'orange', strokeWidth: 1, strokeStyle: 'solid' }}
+        sticky
+        label={false}
+      />
+    </Chart>
+  </View>
+)
+```
+
+### Area Chart
+![](./public/examples/area.png)
+
+```tsx
+import React from 'react'
+import { View, Dimensions } from 'react-native'
+import { Chart, Axis, Tooltip, Area, ScaleType } from 'react-native-statistic-charts'
+
+// const data = { date: sring, value: number }[]
+
+export default () => (
+  <Chart
+    data={this.data}
+    scale={{ date: { type: ScaleType.TimeCategory } }}
+  >
+    <Axis
+      field="date"
+      tickCount={3}
+      lineStyle={{ strokeColor: '#aaa' }}
+      tickLineStyle={{ strokeColor: '#ccc' }}
+    />
+    <Axis
+      field="value"
+      grid
+      lineStyle={{ strokeWidth: 0 }}
+      tickLineStyle={{ strokeWidth: 0 }}
+      gridLineStyle={{ strokeStyle: 'dashed', dashedStyle: [2] }}
+    />
+    <Line position="date*value" color={{ value: 'orange' }} />
+    <Area
+      position="date*value"
+      color='orange'
+      style={{ fill: 'linear-gradient(90deg, orange 0%, #FFFFFF 100%)' }}
+    />
+    <Tooltip
+      crosshair
+      crosshairsType="x"
+      crosshairStyle={{ strokeColor: this.state.color, strokeWidth: 1, strokeStyle: 'solid' }}
+      sticky
+    />
+  </Chart>
+)
+```
+
+### Pie/Donut Chart
+![](./public/examples/donut.png)
+
+```tsx
+import React from 'react'
+import { View, Dimensions } from 'react-native'
+import { Chart, Axis, Tooltip, Interval, ScaleType } from 'react-native-statistic-charts'
+
+// const data = { name: sring, percent: number, a: '1' }[]
+
+export default () => (
+  <Chart
+    data={data}
+    coord={{ transposed: true, type: 'polar', radius: 1, innerRadius: 0.55 }}
+  >
+    <Interval
+      position="a*percent"
+      adjust="stack"
+      groupBy="name"
+      color={{
+        value: [
+          '#EDA500',
+          '#F97B0D',
+          '#EE4D2D',
+          '#BF3D39',
+          '#803F62',
+          '#40428A',
+          '#0046AB',
+          '#0079A5',
+          '#26AA99',
+          '#7EA84D',
+        ],
+      }}
+      itemStyle={{ borderWidth: 3, borderColor: '#fff' }}
+    />
+  </Chart>
+)
+```
+
+### Radar Chart
+![](./public/examples/radar.png)
+
+```tsx
+import React from 'react'
+import { View, Dimensions } from 'react-native'
+import { Chart, Axis, Tooltip, Line, ScaleType } from 'react-native-statistic-charts'
+
+// const data = { date: sring, value: number }[]
+
+export default () => (
+  <Chart
+    data={this.data}
+    coord={{ type: 'polar' }}
+    scale={{ date: { type: ScaleType.TimeCategory, range: [0, 14 / 16] } }}
+  >
+    <Axis
+      tickCount={8}
+      field="date"
+      lineStyle={{ strokeColor: '#aaa' }}
+      tickLineStyle={{ strokeColor: '#ccc' }}
+      labelStyle={{ offset: 10 }}
+      grid
+    />
+    <Axis field="value" lineStyle={{ strokeColor: '#aaa' }} tickLineStyle={{ strokeColor: '#ccc' }} grid />
+    <Line position="date*value" size={2} groupBy="name" />
     <Tooltip
       crosshair
       crosshairsType="x"
