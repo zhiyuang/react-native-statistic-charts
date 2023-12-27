@@ -290,7 +290,7 @@ export default class GoldPriceDemo extends React.Component<
       <View style={{ backgroundColor: '#fff' }}>
         <View style={styles.priceBar}>
           <Text style={styles.priceBarDate}>{this.state.selected.date}</Text>
-          <Text style={styles.priceBarPrice}>{this.state.selected.price / 10000}rp</Text>
+          <Text style={styles.priceBarPrice}>{this.state.selected.price / 10000}</Text>
         </View>
         <Chart
           data={this.data}
@@ -312,7 +312,7 @@ export default class GoldPriceDemo extends React.Component<
             field="price"
             grid
             tickCount={4}
-            formatter={value => `${+value / 10000} rp`}
+            formatter={value => `${+value / 10000}  `}
             lineStyle={{ strokeWidth: 0 }}
             tickLineStyle={{ strokeWidth: 0 }}
             gridLineStyle={{ strokeStyle: 'dashed', dashedStyle: [2] }}

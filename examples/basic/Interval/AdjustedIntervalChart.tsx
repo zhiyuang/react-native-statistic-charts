@@ -100,7 +100,13 @@ export default class BarDemo extends React.Component<any, any> {
         >
           <Axis field="date" lineStyle={{ strokeColor: '#aaa' }} tickLineStyle={{ strokeColor: '#ccc' }} />
           <Axis field="value" lineStyle={{ strokeWidth: 0 }} tickLineStyle={{ strokeWidth: 0 }} grid />
-          <Interval position="date*value" size={10} groupBy="country" adjust={this.state.adjust} />
+          <Interval
+            color={['blue', 'red', 'green']}
+            position="date*value"
+            size={10}
+            groupBy="country"
+            adjust={this.state.adjust}
+          />
           <Tooltip
             crosshairsType="x"
             crosshairStyle={{ strokeColor: 'orange', strokeWidth: 2, strokeStyle: 'solid' }}

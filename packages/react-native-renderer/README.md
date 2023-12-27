@@ -266,7 +266,7 @@ export default () => (
         value: [
           '#EDA500',
           '#F97B0D',
-          '#EE4D2D',
+          '#EE2C4C',
           '#BF3D39',
           '#803F62',
           '#40428A',
